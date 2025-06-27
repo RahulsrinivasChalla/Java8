@@ -1,0 +1,26 @@
+package com.jfs.streams;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class ReduceProgram {
+	
+	public static void main(String[] args) {
+		
+		List<Integer> nums = new ArrayList<>(Arrays.asList(2,27,81,37,28,43,60));
+		
+		Integer sum = nums
+		.stream()
+		.reduce(0, (a,b) -> a+b);
+		System.out.println(sum);
+		
+		List<String> words = new ArrayList<>(Arrays.asList("Rahul", "is", "a", "Java", "Full Stack", "Developer"));
+		
+		String reducedString = words
+		.stream()
+		.reduce("", (a,b) -> a + " " + b);
+		System.out.println(reducedString.trim());
+	}
+
+}
